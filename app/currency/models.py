@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class ContactUs(models.Model):
+    email_from = models.EmailField(max_length=60)
+    subject = models.CharField(max_length=30)
+    message = models.TextField()
