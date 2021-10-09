@@ -1,1 +1,10 @@
 django==3.2.7
+django-extensions
+ipython
+
+# flake8
+flake8
+flake8-builtins
+flake8-import-order
+flake8-print
+flake8-breakpoint

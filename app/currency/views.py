@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from currency.models import Rate
+
 from django.http.response import HttpResponse
 
-# Create your views here.
 
+def rate_list(request):
 
-def hello_world(request):
-    return HttpResponse('Hello world')
+    results = []
+    rates = Rate.objects.all()
+
+    for rate in rates:
+        results.append(
+            f'ID: {rate.id}, sale: {rate.sale}, buy: {rate.buy}, created: {rate.created}, source: {rate.source}<br>')
+
+    return HttpResponse(str(results))
