@@ -1,8 +1,6 @@
+from currency.models import ContactUs, Rate
+
 from django.shortcuts import render
-
-from currency.models import Rate, ContactUs
-
-from django.http.response import HttpResponse
 
 
 def rate_list(request):
