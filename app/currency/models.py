@@ -1,12 +1,13 @@
-from django.db import models
 from currency import model_choices as mch
+
+from django.db import models
 
 
 class Rate(models.Model):
     buy = models.DecimalField(max_digits=6, decimal_places=2)
     sale = models.DecimalField(max_digits=6, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
-    type = models.PositiveSmallIntegerField(
+    type = models.PositiveSmallIntegerField(    # noqa: A003
         choices=mch.RateTypeChoices.choices,
         default=mch.RateTypeChoices.USD,
     )
