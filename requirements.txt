@@ -1,6 +1,7 @@
 django==3.2.7
 django-extensions
 ipython
+django-debug-toolbar
 
 # flake8
 flake8
