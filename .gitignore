@@ -1,4 +1,4 @@
-__pyache__
+__pycache__
 env
 .idea
 app/db.sqlite3
