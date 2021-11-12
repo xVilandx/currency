@@ -15,11 +15,21 @@ class Rate(models.Model):
 
 
 class ContactUs(models.Model):
-    email_from = models.EmailField(max_length=60)
-    subject = models.CharField(max_length=30)
-    message = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=128)
+    reply_to = models.EmailField()
+    subject = models.CharField(max_length=128)
+    body = models.CharField(max_length=1024)
+    raw_content = models.TextField()
 
 
 class Source(models.Model):
     source_url = models.CharField(max_length=255)
     name = models.CharField(max_length=64)
+
+
+class RequestResponseLog(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    request_method = models.CharField(max_length=16)
+    path = models.CharField(max_length=255)
+    time = models.PositiveSmallIntegerField()

@@ -4,6 +4,7 @@ ipython
 django-debug-toolbar
 django-import-export
 django-admin-rangefilter
+django-silk
 
 
 # flake8

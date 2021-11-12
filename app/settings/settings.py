@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rangefilter',
     'import_export',
+    'silk',
 
     'currency',
 ]
 
 MIDDLEWARE = [
+    'currency.middlewares.RequestResponseTimeMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +58,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -132,3 +136,19 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587  # smtp, http: 80, https: 443
+# EMAIL_HOST_USER = 'testtestapp454545@gmail.com'
+# EMAIL_HOST_PASSWORD = 'qwerty123456qwerty'
+DEFAULT_FROM_EMAIL = 'testtestapp454545@gmail.com'
+
+
+if DEBUG:
+    import socket  # only if you haven't already imported this
+    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1', '10.0.2.2']

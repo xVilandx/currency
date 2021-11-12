@@ -47,9 +47,13 @@ class RateAdmin(ImportExportModelAdmin):
 
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = (
-        'email_from',
+        'id',
+        'created',
+        'name',
+        'reply_to',
         'subject',
-        'message',
+        'body',
+        'raw_content',
     )
 
     def has_delete_permission(self, request, obj=None):
