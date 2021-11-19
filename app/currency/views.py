@@ -1,9 +1,9 @@
 from currency.forms import RateForm, SourceForm
 from currency.models import ContactUs, Rate, Source
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.conf import settings
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic import (
