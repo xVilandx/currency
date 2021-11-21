@@ -35,8 +35,7 @@ class RateUpdateView(UserPassesTestMixin, UpdateView):
     template_name = 'rate_update.html'
 
     def test_func(self):
-        if self.request.user.is_superuser:
-            return True
+        return self.request.user.is_superuser
 
 
 class RateDetailsView(UserPassesTestMixin, DetailView):
