@@ -18,7 +18,7 @@ class IndexView(TemplateView):
 
 
 class RateListView(ListView):
-    queryset = Rate.objects.all().select_related('source')
+    queryset = Rate.objects.all()
     template_name = 'rate_list.html'
 
 
