@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'silk',
 
     'currency',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -155,8 +156,12 @@ LOGIN_REDIRECT_URL = reverse_lazy('index')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
 LOGIN_URL = reverse_lazy('login')
 
+AUTH_USER_MODEL = 'account.User'
 
 if DEBUG:
     import socket  # only if you haven't already imported this
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1', '10.0.2.2']
+
+DOMAIN = '0:8000'
+HTTP_SCHEMA = 'http'
