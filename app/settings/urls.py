@@ -17,4 +17,5 @@ urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
     path('currency/', include('currency.urls')),
     path('silk/', include('silk.urls', namespace='silk')),
+    path('account/', include('account.urls')),
     ]
