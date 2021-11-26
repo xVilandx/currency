@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Source details{% endblock title %}
 
 {% block content %}
     ID: {{ source.id }}
     Source_url: {{ source.source_url }}
     Name: {{ source.name }}
+    Logo:   {# {% if source.logo %}#}
+            {# <img src="{{ source.logo.url }}" height="50" width="50">#}
+            {# {% else %}#}
+            {# <img src="{% static 'images/logo.jpg' %}" height="50" width="50">#}
+            {# {% endif %}#}
+            <img src="{{ source.logo_url }}" height="50" width="50">
 {% endblock content %}

@@ -1,26 +1,38 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Table{% endblock title %}
 
 {% block content %}
 
-    <a href="{% url 'currency:source-create' %}">Create Source</a>
+<a href="{% url 'currency:source-create' %}">Create Source</a>
 
-    <table border="1">
+<table border="1">
     <tr>
         <th>ID</th>
         <th>Source_url</th>
         <th>Name</th>
+        <th>Logo</th>
     </tr>
     {% for source in object_list %}
-        <tr>
-            <td>{{ source.id }}</td>
-            <td>{{ source.source_url }}</td>
-            <td>{{ source.name }}</td>
-            <td><a href="{% url 'currency:source-details' source.id %}">Details</a> </td>
-            <td><a href="{% url 'currency:source-update' source.id %}">Edit</a> </td>
-            <td><a href="{% url 'currency:source-delete' source.id %}">Delete</a> </td>
-        </tr>
+    <tr>
+        <td>{{ source.id }}</td>
+        <td>{{ source.source_url }}</td>
+        <td>{{ source.name }}</td>
+        <td>
+            <!--                <img src="{{ source.logo_url }}" width="50" height="50"/></td>-->
+            {# {% if source.logo %}#}
+            {# <img src="{{ source.logo.url }}" height="50" width="50">#}
+            {# {% else %}#}
+            {# <img src="{% static 'images/logo.jpg' %}" height="50" width="50">#}
+            {# {% endif %}#}
+            <img src="{{ source.logo_url }}" height="50" width="50">
+        </td>
+        <td><a href="{% url 'currency:source-details' source.id %}">Details</a></td>
+        <td><a href="{% url 'currency:source-update' source.id %}">Edit</a></td>
+        <td><a href="{% url 'currency:source-delete' source.id %}">Delete</a></td>
+    </tr>
     {% endfor %}
-    </table>
+</table>
 {% endblock content %}
