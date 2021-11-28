@@ -1,13 +1,18 @@
 from currency import model_choices as mch
 
 from django.db import models
+from django.templatetags.static import static
+
+
+def logo_upload_to(instance, filename):
+    return f'logo/{instance.name}/{filename}'
 
 
 class Rate(models.Model):
     buy = models.DecimalField(max_digits=6, decimal_places=2)
     sale = models.DecimalField(max_digits=6, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
-    type = models.PositiveSmallIntegerField(    # noqa: A003
+    type = models.PositiveSmallIntegerField(    # noqa = A003
         choices=mch.RateTypeChoices.choices,
         default=mch.RateTypeChoices.USD,
     )
@@ -26,6 +31,18 @@ class ContactUs(models.Model):
 class Source(models.Model):
     source_url = models.CharField(max_length=255)
     name = models.CharField(max_length=64)
+    logo = models.FileField(
+            upload_to=logo_upload_to,
+            default=None,
+            null=True,
+            blank=True
+        )
+
+    @property
+    def logo_url(self):
+        if self.logo:
+            return self.logo.url
+        return static('images/logo.jpg')
 
     def __str__(self):
         return self.name

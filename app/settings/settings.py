@@ -17,7 +17,6 @@ from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ SECRET_KEY = 'django-insecure-^g5l($sk%t2_-=x(waac(6v8x=3^6e$t$ua8%7f+(j_ir7**3n
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -45,6 +43,8 @@ INSTALLED_APPS = [
     'rangefilter',
     'import_export',
     'silk',
+    'storages',
+    'crispy_forms',
 
     'currency',
     'account',
@@ -87,7 +87,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'settings.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -97,7 +96,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -117,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -131,17 +128,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.parent / 'static_content' / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -160,8 +161,20 @@ AUTH_USER_MODEL = 'account.User'
 
 if DEBUG:
     import socket  # only if you haven't already imported this
+
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1', '10.0.2.2']
 
 DOMAIN = '0:8000'
 HTTP_SCHEMA = 'http'
+
+# AWS_S3_REGION_NAME = 'fra1'
+# AWS_S3_ENDPOINT_URL = 'https://hhhhjhj.fra1.digitaloceanspaces.com/'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_ACCESS_KEY_ID = 'DHLQ4ECCUK543W6PRD6B'
+# AWS_SECRET_ACCESS_KEY = 'EGVSCbm0bJevs8isPRkmOatLL+YtlivEqjLfHd4W8pw'
+# AWS_STORAGE_BUCKET_NAME = 'media'
+# MEDIA_URL = 'https://hillel-test.fra1.digitaloceanspaces.com/media/'
+# AWS_DEFAULT_ACL = 'public-read'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

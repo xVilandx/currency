@@ -5,7 +5,9 @@ django-debug-toolbar
 django-import-export
 django-admin-rangefilter
 django-silk
-
+django-storages
+django-crispy-forms
+boto3
 
 # flake8
 flake8
