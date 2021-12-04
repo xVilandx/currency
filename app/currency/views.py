@@ -1,9 +1,8 @@
 from currency.forms import RateForm, SourceForm
 from currency.models import ContactUs, Rate, Source
+from currency.tasks import send_email_in_background
 
-from django.conf import settings
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic import (
     CreateView, DeleteView,
@@ -17,7 +16,7 @@ class IndexView(TemplateView):
 
 
 class RateListView(ListView):
-    queryset = Rate.objects.all().select_related('source')
+    queryset = Rate.objects.all().order_by('-created').select_related('source')
     template_name = 'rate_list.html'
 
 
@@ -94,24 +93,14 @@ class ContactUsCreateView(CreateView):
         'body',
     )
 
-    def _send_email(self):
-        subject = 'User ContactUs'
-        body = f'''
-             Request From: {self.object.name}
-             Email to reply: {self.object.reply_to}
-             Subject: {self.object.subject}
-
-             Body: {self.object.body}
-         '''
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [settings.DEFAULT_FROM_EMAIL],
-            fail_silently=False,
-        )
-
     def form_valid(self, form):
         redirect = super().form_valid(form)
-        self._send_email()
+        subject = 'User ContactUs'
+        body = f'''
+            Request From: {self.object.name}
+            Email to reply: {self.object.reply_to}
+            Subject: {self.object.subject}
+            Body: {self.object.body}
+                 '''
+        send_email_in_background.delay(subject, body)
         return redirect
