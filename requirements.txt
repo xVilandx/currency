@@ -8,6 +8,10 @@ django-silk
 django-storages
 django-crispy-forms
 boto3
+celery
+requests
+beautifulsoup4
+lxml
 
 # flake8
 flake8

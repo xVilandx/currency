@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from celery.schedules import crontab
+
 from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -178,3 +180,32 @@ HTTP_SCHEMA = 'http'
 # AWS_DEFAULT_ACL = 'public-read'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CELERY_BROKER_URL = 'amqp://localhost'
+
+CELERY_BEAT_SCHEDULE = {
+    'parse_privatbank': {
+        'task': 'currency.tasks.parse_privatbank',
+        'schedule': crontab(minute='*/2'),
+    },
+    'parse_monobank': {
+        'task': 'currency.tasks.parse_monobank',
+        'schedule': crontab(minute='*/2'),
+    },
+    'parse_vkurse': {
+        'task': 'currency.tasks.parse_vkurse',
+        'schedule': crontab(minute='*/2'),
+    },
+    'parse_kredo': {
+        'task': 'currency.tasks.parse_kredo',
+        'schedule': crontab(minute='*/2'),
+    },
+    'parse_otp': {
+        'task': 'currency.tasks.parse_otp',
+        'schedule': crontab(minute='*/2'),
+    },
+    'parse_credit_agricole': {
+        'task': 'currency.tasks.parse_credit_agricole',
+        'schedule': crontab(minute='*/2'),
+    },
+}
