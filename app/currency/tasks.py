@@ -4,7 +4,7 @@ from celery import shared_task
 
 from currency import consts
 from currency import model_choices as mch
-from currency.utils import to_decimal
+from currency.utils import to_decimal, get_or_create
 
 from django.conf import settings
 from django.core.mail import send_mail
@@ -28,12 +28,9 @@ def send_email_in_background(subject, body):
 
 @shared_task
 def parse_privatbank():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_PRIVATBANK
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='PrivatBank')
+    source = get_or_create(consts.CODE_NAME_PRIVATBANK, 'Privatbank')
 
     response = requests.get(consts.API_PRIVATBANK_URL)
     response.raise_for_status()
@@ -69,12 +66,9 @@ def parse_privatbank():
 
 @shared_task
 def parse_monobank():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_MONOBANK
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='MonoBank')
+    source = get_or_create(consts.CODE_NAME_MONOBANK, 'Monobank')
 
     response = requests.get(consts.API_MONOBANK_URL)
     response.raise_for_status()
@@ -111,12 +105,9 @@ def parse_monobank():
 
 @shared_task
 def parse_vkurse():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_VKURSE
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='Vkurse')
+    source = get_or_create(consts.CODE_NAME_VKURSE, 'Vkurse')
 
     response = requests.get(consts.API_VKURSE_URL)
     response.raise_for_status()
@@ -153,12 +144,9 @@ def parse_vkurse():
 
 @shared_task
 def parse_kredo():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_KREDO
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='Kredo')
+    source = get_or_create(consts.CODE_NAME_KREDO, 'Kredo')
 
     response = requests.get(consts.API_KREDO_URL)
     response.raise_for_status()
@@ -168,8 +156,8 @@ def parse_kredo():
     sale_usd = table.find_all('tr')[1].find_all('td')[2].text
     buy_euro = table.find_all('tr')[2].find_all('td')[3].text
     sale_euro = table.find_all('tr')[2].find_all('td')[2].text
-    usd = dict(ccy='USD', buy=buy_usd, sale=sale_usd)
-    euro = dict(ccy='EUR', buy=buy_euro, sale=sale_euro)
+    usd = {'ccy': 'USD', 'buy': buy_usd, 'sale': sale_usd}
+    euro = {'ccy': 'EUR', 'buy': buy_euro, 'sale': sale_euro}
     rates = [usd, euro]
     available_currency_types = {
         'USD': mch.RateTypeChoices.USD,
@@ -203,12 +191,9 @@ def parse_kredo():
 
 @shared_task
 def parse_otp():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_OTP
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='Otp')
+    source = get_or_create(consts.CODE_NAME_OTP, 'Otp')
 
     response = requests.get(consts.API_OTP_URL)
     response.raise_for_status()
@@ -218,8 +203,8 @@ def parse_otp():
     sale_usd = table.find_all('tr')[1].find_all('td')[2].text
     buy_euro = table.find_all('tr')[2].find_all('td')[1].text
     sale_euro = table.find_all('tr')[2].find_all('td')[2].text
-    usd = dict(ccy='USD', buy=buy_usd, sale=sale_usd)
-    euro = dict(ccy='EUR', buy=buy_euro, sale=sale_euro)
+    usd = {'ccy': 'USD', 'buy': buy_usd, 'sale': sale_usd}
+    euro = {'ccy': 'EUR', 'buy': buy_euro, 'sale': sale_euro}
     rates = [usd, euro]
     available_currency_types = {
         'USD': mch.RateTypeChoices.USD,
@@ -253,12 +238,9 @@ def parse_otp():
 
 @shared_task
 def parse_credit_agricole():
-    from currency.models import Rate, Source
+    from currency.models import Rate
 
-    code_name = consts.CODE_NAME_CREDIT_AGRIKOLE
-    source = Source.objects.filter(code_name=code_name).last()
-    if source is None:
-        source = Source.objects.create(code_name=code_name, name='Credit_agricole')
+    source = get_or_create(consts.CODE_NAME_CREDIT_AGRIKOLE, 'Credit_agricole')
 
     response = requests.get(consts.API_CREDIT_AGRIKOLE_URL)
     response.raise_for_status()
@@ -268,8 +250,8 @@ def parse_credit_agricole():
     sale_usd = table.find_all('tr')[1].find_all('td')[2].text
     buy_euro = table.find_all('tr')[2].find_all('td')[1].text
     sale_euro = table.find_all('tr')[2].find_all('td')[2].text
-    usd = dict(ccy='USD', buy=buy_usd, sale=sale_usd)
-    euro = dict(ccy='EUR', buy=buy_euro, sale=sale_euro)
+    usd = {'ccy': 'USD', 'buy': buy_usd, 'sale': sale_usd}
+    euro = {'ccy': 'EUR', 'buy': buy_euro, 'sale': sale_euro}
     rates = [usd, euro]
     available_currency_types = {
         'USD': mch.RateTypeChoices.USD,
