@@ -12,6 +12,7 @@ celery
 requests
 beautifulsoup4
 lxml
+django-filter
 
 # flake8
 flake8

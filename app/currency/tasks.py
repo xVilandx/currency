@@ -4,7 +4,7 @@ from celery import shared_task
 
 from currency import consts
 from currency import model_choices as mch
-from currency.utils import to_decimal, get_or_create
+from currency.utils import get_or_create, to_decimal
 
 from django.conf import settings
 from django.core.mail import send_mail

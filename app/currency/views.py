@@ -1,3 +1,4 @@
+from currency.filters import RateFilter
 from currency.forms import RateForm, SourceForm
 from currency.models import ContactUs, Rate, Source
 from currency.tasks import send_email_in_background
@@ -10,14 +11,27 @@ from django.views.generic import (
     TemplateView, UpdateView,
 )
 
+from django_filters.views import FilterView
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-class RateListView(ListView):
+class RateListView(FilterView):
+    paginate_by = 10
     queryset = Rate.objects.all().order_by('-created').select_related('source')
-    template_name = 'rate_list.html'
+    filterset_class = RateFilter
+    template_name = 'rate_filter.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        context['pagination_filter'] = '&'.join(
+            f'{key}={value}'
+            for key, value in self.request.GET.items()
+            if key != 'page'
+        )
+        return context
 
 
 class RateCreateView(CreateView):
