@@ -10,6 +10,11 @@
     <div class="col-12">
         <a href="{% url 'currency:rate-create' %}">Create Rate</a>
         <br>
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit">Filter</button>
+        </form>
+        <br>
 
         <table class="table table-striped">
             <thead>
@@ -57,6 +62,7 @@
             {% endfor %}
             </tbody>
         </table>
+        {% include 'includes/pagination.html' %}
     </div>
 </div>
 

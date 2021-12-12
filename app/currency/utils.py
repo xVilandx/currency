@@ -1,6 +1,6 @@
-from currency.models import Source
-
 from decimal import Decimal
+
+from currency.models import Source
 
 
 def to_decimal(num: str) -> Decimal:
