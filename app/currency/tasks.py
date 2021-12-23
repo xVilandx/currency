@@ -72,7 +72,7 @@ def parse_monobank():
 
     response = requests.get(consts.API_MONOBANK_URL)
     response.raise_for_status()
-    rates = response.json()[0:2]
+    rates = response.json()[0:3]
     available_currency_types = {
         840: mch.RateTypeChoices.USD,
         978: mch.RateTypeChoices.EUR,

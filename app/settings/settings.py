@@ -188,13 +188,14 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (  # 403
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     # 'DEFAULT_PAGINATION_CLASS': '',
     'DEFAULT_THROTTLE_RATES': {
         'currency': '2/min',
         # 'user': '1000/day',
-    }
+    },
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
 SIMPLE_JWT = {
