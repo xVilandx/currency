@@ -12,3 +12,6 @@ API_VKURSE_URL = 'http://vkurse.dp.ua/course.json'
 API_KREDO_URL = 'https://kredobank.com.ua/info/kursy-valyut/commercial'
 API_OTP_URL = 'https://ru.otpbank.com.ua/'
 API_CREDIT_AGRIKOLE_URL = 'https://credit-agricole.ua/ru'
+
+
+LATEST_RATE_KEY = 'API::V1::VIEWS::LatestRatesView'

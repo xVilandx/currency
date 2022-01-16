@@ -1,0 +1,541 @@
+[
+  {
+    "model": "currency.rate",
+    "pk": 1,
+    "fields": {
+      "buy": "27.20",
+      "sale": "27.40",
+      "created": "2021-12-04T22:44:00.461Z",
+      "type": 1,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 2,
+    "fields": {
+      "buy": "30.80",
+      "sale": "30.95",
+      "created": "2021-12-04T22:44:00.464Z",
+      "type": 2,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 3,
+    "fields": {
+      "buy": "27.25",
+      "sale": "27.62",
+      "created": "2021-12-04T22:44:00.626Z",
+      "type": 1,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 4,
+    "fields": {
+      "buy": "30.65",
+      "sale": "31.15",
+      "created": "2021-12-04T22:44:00.631Z",
+      "type": 2,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 5,
+    "fields": {
+      "buy": "27.26",
+      "sale": "27.46",
+      "created": "2021-12-04T22:44:00.665Z",
+      "type": 1,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 6,
+    "fields": {
+      "buy": "30.75",
+      "sale": "31.10",
+      "created": "2021-12-04T22:44:00.669Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 7,
+    "fields": {
+      "buy": "27.12",
+      "sale": "27.32",
+      "created": "2021-12-04T22:44:00.776Z",
+      "type": 1,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 8,
+    "fields": {
+      "buy": "30.50",
+      "sale": "31.00",
+      "created": "2021-12-04T22:44:00.779Z",
+      "type": 2,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 9,
+    "fields": {
+      "buy": "27.20",
+      "sale": "27.52",
+      "created": "2021-12-04T22:44:01.238Z",
+      "type": 1,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 10,
+    "fields": {
+      "buy": "30.65",
+      "sale": "31.15",
+      "created": "2021-12-04T22:44:01.241Z",
+      "type": 2,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 11,
+    "fields": {
+      "buy": "27.22",
+      "sale": "27.42",
+      "created": "2021-12-04T22:44:01.274Z",
+      "type": 1,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 12,
+    "fields": {
+      "buy": "30.75",
+      "sale": "30.99",
+      "created": "2021-12-04T22:44:01.276Z",
+      "type": 2,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 13,
+    "fields": {
+      "buy": "27.25",
+      "sale": "27.40",
+      "created": "2021-12-06T14:31:39.862Z",
+      "type": 1,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 14,
+    "fields": {
+      "buy": "30.85",
+      "sale": "31.00",
+      "created": "2021-12-06T14:31:39.866Z",
+      "type": 2,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 15,
+    "fields": {
+      "buy": "30.55",
+      "sale": "31.06",
+      "created": "2021-12-06T14:31:40.022Z",
+      "type": 2,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 16,
+    "fields": {
+      "buy": "27.30",
+      "sale": "27.50",
+      "created": "2021-12-06T14:31:40.083Z",
+      "type": 1,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 17,
+    "fields": {
+      "buy": "30.65",
+      "sale": "31.04",
+      "created": "2021-12-06T14:31:40.088Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 18,
+    "fields": {
+      "buy": "27.23",
+      "sale": "27.44",
+      "created": "2021-12-06T14:31:40.400Z",
+      "type": 1,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 19,
+    "fields": {
+      "buy": "30.70",
+      "sale": "31.20",
+      "created": "2021-12-06T14:31:40.403Z",
+      "type": 2,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 20,
+    "fields": {
+      "buy": "27.25",
+      "sale": "27.49",
+      "created": "2021-12-06T14:31:40.418Z",
+      "type": 1,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 21,
+    "fields": {
+      "buy": "30.80",
+      "sale": "31.10",
+      "created": "2021-12-06T14:31:40.420Z",
+      "type": 2,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 22,
+    "fields": {
+      "buy": "27.20",
+      "sale": "27.45",
+      "created": "2021-12-06T14:31:43.137Z",
+      "type": 1,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 23,
+    "fields": {
+      "buy": "30.55",
+      "sale": "31.05",
+      "created": "2021-12-06T14:31:43.141Z",
+      "type": 2,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 24,
+    "fields": {
+      "buy": "1.12",
+      "sale": "1.14",
+      "created": "2021-12-06T14:46:00.741Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 25,
+    "fields": {
+      "buy": "30.65",
+      "sale": "31.04",
+      "created": "2021-12-06T14:51:56.723Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 26,
+    "fields": {
+      "buy": "30.65",
+      "sale": "30.85",
+      "created": "2021-12-07T14:42:41.827Z",
+      "type": 2,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 27,
+    "fields": {
+      "buy": "27.20",
+      "sale": "27.40",
+      "created": "2021-12-07T14:42:42.166Z",
+      "type": 1,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 28,
+    "fields": {
+      "buy": "30.60",
+      "sale": "31.00",
+      "created": "2021-12-07T14:42:42.169Z",
+      "type": 2,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 29,
+    "fields": {
+      "buy": "27.25",
+      "sale": "27.55",
+      "created": "2021-12-07T14:42:42.196Z",
+      "type": 1,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 30,
+    "fields": {
+      "buy": "30.60",
+      "sale": "31.06",
+      "created": "2021-12-07T14:42:42.203Z",
+      "type": 2,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 31,
+    "fields": {
+      "buy": "27.27",
+      "sale": "27.47",
+      "created": "2021-12-07T14:42:42.267Z",
+      "type": 1,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 32,
+    "fields": {
+      "buy": "30.64",
+      "sale": "31.04",
+      "created": "2021-12-07T14:42:42.271Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 33,
+    "fields": {
+      "buy": "27.20",
+      "sale": "27.39",
+      "created": "2021-12-07T14:42:42.519Z",
+      "type": 1,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 34,
+    "fields": {
+      "buy": "30.55",
+      "sale": "30.89",
+      "created": "2021-12-07T14:42:42.521Z",
+      "type": 2,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 35,
+    "fields": {
+      "buy": "27.15",
+      "sale": "27.40",
+      "created": "2021-12-07T14:42:43.010Z",
+      "type": 1,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 36,
+    "fields": {
+      "buy": "30.50",
+      "sale": "30.95",
+      "created": "2021-12-07T14:42:43.014Z",
+      "type": 2,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 37,
+    "fields": {
+      "buy": "30.61",
+      "sale": "31.01",
+      "created": "2021-12-07T15:32:00.702Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 38,
+    "fields": {
+      "buy": "26.95",
+      "sale": "27.10",
+      "created": "2021-12-14T11:43:47.372Z",
+      "type": 1,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 39,
+    "fields": {
+      "buy": "30.40",
+      "sale": "30.55",
+      "created": "2021-12-14T11:43:47.376Z",
+      "type": 2,
+      "source": 2
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 40,
+    "fields": {
+      "buy": "26.70",
+      "sale": "27.03",
+      "created": "2021-12-14T11:43:47.553Z",
+      "type": 1,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 41,
+    "fields": {
+      "buy": "30.18",
+      "sale": "30.67",
+      "created": "2021-12-14T11:43:47.556Z",
+      "type": 2,
+      "source": 5
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 42,
+    "fields": {
+      "buy": "26.90",
+      "sale": "27.02",
+      "created": "2021-12-14T11:43:47.608Z",
+      "type": 1,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 43,
+    "fields": {
+      "buy": "30.30",
+      "sale": "30.66",
+      "created": "2021-12-14T11:43:47.610Z",
+      "type": 2,
+      "source": 4
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 44,
+    "fields": {
+      "buy": "26.85",
+      "sale": "27.05",
+      "created": "2021-12-14T11:43:47.738Z",
+      "type": 1,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 45,
+    "fields": {
+      "buy": "30.20",
+      "sale": "30.55",
+      "created": "2021-12-14T11:43:47.740Z",
+      "type": 2,
+      "source": 1
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 46,
+    "fields": {
+      "buy": "26.85",
+      "sale": "27.09",
+      "created": "2021-12-14T11:43:47.958Z",
+      "type": 1,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 47,
+    "fields": {
+      "buy": "30.20",
+      "sale": "30.59",
+      "created": "2021-12-14T11:43:47.961Z",
+      "type": 2,
+      "source": 6
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 48,
+    "fields": {
+      "buy": "26.80",
+      "sale": "27.10",
+      "created": "2021-12-14T11:43:48.340Z",
+      "type": 1,
+      "source": 3
+    }
+  },
+  {
+    "model": "currency.rate",
+    "pk": 49,
+    "fields": {
+      "buy": "30.05",
+      "sale": "30.55",
+      "created": "2021-12-14T11:43:48.345Z",
+      "type": 2,
+      "source": 3
+    }
+  }
+]

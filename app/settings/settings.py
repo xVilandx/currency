@@ -188,14 +188,24 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (  # 403
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     # 'DEFAULT_PAGINATION_CLASS': '',
     'DEFAULT_THROTTLE_RATES': {
         'currency': '2/min',
         # 'user': '1000/day',
+    },
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': '127.0.0.1:11211',
     }
 }
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=14),

@@ -18,6 +18,7 @@ djangorestframework-yaml
 djangorestframework-xml
 djangorestframework-simplejwt
 drf-yasg
+pymemcache
 
 # flake8
 flake8
@@ -25,3 +26,9 @@ flake8-builtins
 flake8-import-order
 flake8-print
 flake8-breakpoint
+
+# pytest
+pytest-django
+pytest
+pytest-cov
+pytest-mock
