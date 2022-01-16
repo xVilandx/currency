@@ -18,6 +18,7 @@ djangorestframework-yaml
 djangorestframework-xml
 djangorestframework-simplejwt
 drf-yasg
+pymemcache
 
 # flake8
 flake8

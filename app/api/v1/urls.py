@@ -34,10 +34,10 @@ router.register('rates', views.RateViewSet, basename='rate')
 router.register('source', views.SourceViewSet, basename='source')
 router.register('contactus', views.ContactUsViewSet, basename='contactus')
 
-
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('rates/latest/', views.LatestRatesView.as_view(), name='rates-latest'),
 
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
