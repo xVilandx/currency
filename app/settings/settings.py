@@ -235,7 +235,7 @@ SIMPLE_JWT = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_BROKER_URL = 'memory://localhost'
 
 CELERY_BEAT_SCHEDULE = {
     'parse_privatbank': {
